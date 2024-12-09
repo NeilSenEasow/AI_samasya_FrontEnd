@@ -9,7 +9,7 @@ function App() {
     <div>
       <NavBar />
       <Header />
-      <Slider /> {/* This already toggles DragAndDropArea and SignLanguage */}
+      <Slider /> 
     </div>
   );
 }

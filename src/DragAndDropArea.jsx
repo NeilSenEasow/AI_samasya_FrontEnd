@@ -9,7 +9,7 @@ function DragAndDropArea() {
     const droppedFile = e.dataTransfer.files[0];
     if (droppedFile) {
       setFile(droppedFile);
-      setQuestionnaireVisible(true); // Show questionnaire after file drop
+      setQuestionnaireVisible(true); 
     }
   };
 
@@ -21,8 +21,12 @@ function DragAndDropArea() {
     const selectedFile = e.target.files[0];
     if (selectedFile) {
       setFile(selectedFile);
-      setQuestionnaireVisible(true); // Show questionnaire after file select
+      setQuestionnaireVisible(true); 
     }
+  };
+
+  const handleAreaClick = () => {
+    document.getElementById('fileInput').click(); 
   };
 
   return (
@@ -30,6 +34,7 @@ function DragAndDropArea() {
       className="drag-and-drop-container"
       onDrop={handleDrop}
       onDragOver={handleDragOver}
+      onClick={handleAreaClick} 
     >
       <div className="drag-and-drop-box">
         {file ? (
@@ -45,6 +50,7 @@ function DragAndDropArea() {
               onChange={handleFileSelect}
               className="hidden-input"
               accept=".pdf,.txt"
+              id="fileInput"
             />
             <p>Or click to choose a file</p>
           </div>

@@ -10,24 +10,29 @@ function Slider() {
 
   return (
     <div style={{ padding: "20px" }}>
-      {/* <h1 className="pdf-header">PDF Summarizer & Q&A Generator</h1> */}
 
-      {/* Toggle Switch */}
-      <div className="slider-container">
-        <label className="slider-label">
-          <span>Drag & Drop</span>
-          <input
-            type="checkbox"
-            className="slider-toggle"
-            checked={isSignLanguage}
-            onChange={handleToggle}
-          />
-          <span>Sign Language Detection</span>
-        </label>
+      {/* Button to toggle between Drag & Drop and Sign Language Detection */}
+      <div className="slider-container" style={{ position: "relative" }}>
+        <motion.button
+          onClick={handleToggle}
+          style={{
+            padding: "10px 20px",
+            fontSize: "16px",
+            cursor: "pointer",
+            backgroundColor: "#007bff",
+            color: "white",
+            border: "none",
+            borderRadius: "25px",
+            transition: "background-color 0.3s ease",
+          }}
+          whileHover={{ backgroundColor: "#0056b3" }}
+        >
+          {isSignLanguage ? "Drag & Drop" : "Sign Language Detection"}
+        </motion.button>
       </div>
 
       {/* AnimatePresence for Smooth Transitions */}
-      <div style={{ position: "relative", height: "400px" }}>
+      <div style={{ position: "relative", height: "400px", marginTop: "20px" }}>
         <AnimatePresence>
           {isSignLanguage ? (
             <motion.div
