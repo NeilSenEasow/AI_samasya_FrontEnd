@@ -1,15 +1,15 @@
 import React from "react";
-import UploadPDF from "./uploadPDF.jsx";
+import Header from "./Header.jsx";
 import NavBar from "./NavBar.jsx";
 import './App.css';
-import DragAndDropArea from "./DragAndDropArea"
+import Slider from "./Slider.jsx";
 
 function App() {
   return (
     <div>
       <NavBar />
-      <UploadPDF />
-      <DragAndDropArea />
+      <Header />
+      <Slider /> {/* This already toggles DragAndDropArea and SignLanguage */}
     </div>
   );
 }
