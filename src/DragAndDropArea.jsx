@@ -9,7 +9,7 @@ function DragAndDropArea() {
     const droppedFile = e.dataTransfer.files[0];
     if (droppedFile) {
       setFile(droppedFile);
-      setQuestionnaireVisible(true); 
+      setQuestionnaireVisible(true);
     }
   };
 
@@ -21,46 +21,46 @@ function DragAndDropArea() {
     const selectedFile = e.target.files[0];
     if (selectedFile) {
       setFile(selectedFile);
-      setQuestionnaireVisible(true); 
+      setQuestionnaireVisible(true);
     }
   };
 
   const handleAreaClick = () => {
-    document.getElementById('fileInput').click(); 
+    document.getElementById('fileInput').click();
   };
 
   return (
-    <div
-      className="drag-and-drop-container"
-      onDrop={handleDrop}
-      onDragOver={handleDragOver}
-      onClick={handleAreaClick} 
-    >
-      <div className="drag-and-drop-box">
-        {file ? (
-          <div>
-            <h3>{file.name}</h3>
-            <p>File ready to be uploaded</p>
-          </div>
-        ) : (
-          <div>
-            <p>Drag and drop a PDF or text file here</p>
-            <input
-              type="file"
-              onChange={handleFileSelect}
-              className="hidden-input"
-              accept=".pdf,.txt"
-              id="fileInput"
-            />
-            <p>Or click to choose a file</p>
-          </div>
-        )}
+    <div>
+      <div
+        className="drag-and-drop-container"
+        onDrop={handleDrop}
+        onDragOver={handleDragOver}
+        onClick={handleAreaClick}
+      >
+        <div className="drag-and-drop-box">
+          {file ? (
+            <div>
+              <h3>{file.name}</h3>
+              <p>File ready to be uploaded</p>
+            </div>
+          ) : (
+            <div>
+              <p>Drag and drop a PDF or text file here</p>
+              <input
+                type="file"
+                onChange={handleFileSelect}
+                className="hidden-input"
+                accept=".pdf,.txt"
+                id="fileInput"
+              />
+              <p>Or click to choose a file</p>
+            </div>
+          )}
+        </div>
       </div>
 
-      {/* Dummy Questionnaire */}
       {questionnaireVisible && (
         <div className="questionnaire">
-          <h2>Questionnaire</h2>
           <div className="question">
             <label>1. What is your name?</label>
             <input type="text" />
